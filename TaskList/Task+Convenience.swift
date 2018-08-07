@@ -17,6 +17,7 @@ extension Task {
         
         self.name = name
         self.note = note
-        self.due = due as Date?
+        self.due = due
+        self.isComplete = false
     }
 }

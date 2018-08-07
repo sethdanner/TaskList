@@ -27,7 +27,7 @@ class TaskListTableViewController: UITableViewController, TaskTableViewCellDeleg
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: TaskTableViewCell! = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as? TaskTableViewCell
+        var cell: TaskTableViewCell! = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as? TaskTableViewCell
         if cell == nil { TaskTableViewCell() }
 
         let task = TaskController.shared.tasks[indexPath.row]
@@ -49,7 +49,7 @@ class TaskListTableViewController: UITableViewController, TaskTableViewCellDeleg
         guard let indexPath = tableView.indexPath(for: sender) else { return }
         let task = TaskController.shared.tasks[indexPath.row]
         TaskController.shared.toggleIsCompleted(task: task)
-        tableView.reloadRows(at: [indexPath], with: .fade)
+        tableView.reloadRows(at: [indexPath], with: .automatic)
     }
 
     // MARK: - Navigation
@@ -61,7 +61,7 @@ class TaskListTableViewController: UITableViewController, TaskTableViewCellDeleg
             
             let task = TaskController.shared.tasks[indexPath.row]
             taskDetailVC.task = task
-            taskDetailVC.dueDate = task.due
+            taskDetailVC.dueDate = task.due as? Date
         }
     }
 }

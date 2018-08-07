@@ -18,18 +18,6 @@ class TaskController {
         tasks = fetchTasks()
     }
     
-    let fetchedResultsController: NSFetchedResultsController<Task> = {
-        
-        let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
-        
-        let isCompleteSort = NSSortDescriptor(key: "isComplete", ascending: false)
-        let dueDateSort = NSSortDescriptor(key: "due", ascending: false)
-        
-        fetchRequest.sortDescriptors = [isCompleteSort, dueDateSort]
-        
-        return NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.context, sectionNameKeyPath: "isComplete", cacheName: nil)
-    }()
-    
     // MARK: CRUD Functions
     func add(taskWith name: String, notes: String?, due: Date?) {
         
@@ -55,9 +43,8 @@ class TaskController {
         tasks = fetchTasks()
     }
     
-    
     // Core Data
-    func saveToPersistentStore() {
+    private func saveToPersistentStore() {
         
         do {
             try CoreDataStack.context.save()

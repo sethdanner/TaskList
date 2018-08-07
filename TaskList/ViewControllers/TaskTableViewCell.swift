@@ -12,7 +12,7 @@ protocol TaskTableViewCellDelegate {
     func buttonCellButtonTapped(_ sender: TaskTableViewCell)
 }
 
-//@IBDesignable
+@IBDesignable
 
 class TaskTableViewCell: UITableViewCell {
     
