@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6051BF742112582E009F4F38 /* Task+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6051BF732112582E009F4F38 /* Task+Convenience.swift */; };
+		60657A4621192D2700F4F6F5 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60657A4521192D2700F4F6F5 /* DateHelper.swift */; };
 		60F9E55321124D54003E8FA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F9E55221124D54003E8FA4 /* AppDelegate.swift */; };
 		60F9E55821124D54003E8FA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60F9E55621124D54003E8FA4 /* Main.storyboard */; };
 		60F9E55B21124D54003E8FA4 /* TaskList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 60F9E55921124D54003E8FA4 /* TaskList.xcdatamodeld */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		6051BF732112582E009F4F38 /* Task+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Convenience.swift"; sourceTree = "<group>"; };
+		60657A4521192D2700F4F6F5 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		60F9E54F21124D54003E8FA4 /* TaskList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60F9E55221124D54003E8FA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60F9E55721124D54003E8FA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				60F9E55221124D54003E8FA4 /* AppDelegate.swift */,
+				60657A4521192D2700F4F6F5 /* DateHelper.swift */,
 				60F9E55C21124D55003E8FA4 /* Assets.xcassets */,
 				60F9E56121124D55003E8FA4 /* Info.plist */,
 			);
@@ -183,6 +186,7 @@
 				60F9E56F21125125003E8FA4 /* TaskTableViewCell.swift in Sources */,
 				6051BF742112582E009F4F38 /* Task+Convenience.swift in Sources */,
 				60F9E56B2112510A003E8FA4 /* TaskListTableViewController.swift in Sources */,
+				60657A4621192D2700F4F6F5 /* DateHelper.swift in Sources */,
 				60F9E56D21125115003E8FA4 /* TaskDetailTableViewController.swift in Sources */,
 				60F9E55321124D54003E8FA4 /* AppDelegate.swift in Sources */,
 			);
