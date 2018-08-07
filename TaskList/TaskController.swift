@@ -14,6 +14,10 @@ class TaskController {
     static let shared = TaskController()
     var tasks: [Task] = []
     
+    init() {
+        tasks = fetchTasks()
+    }
+    
     let fetchedResultsController: NSFetchedResultsController<Task> = {
         
         let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
@@ -31,6 +35,7 @@ class TaskController {
         
         let _ = Task(name: name, note: notes, due: due)
         saveToPersistentStore()
+        tasks = fetchTasks()
         
     }
     
@@ -40,12 +45,14 @@ class TaskController {
         task.note = note
         task.due = due
         saveToPersistentStore()
+        tasks = fetchTasks()
     }
     
     func delete(task: Task) {
         
         task.managedObjectContext?.delete(task)
         saveToPersistentStore()
+        tasks = fetchTasks()
     }
     
     
@@ -59,13 +66,9 @@ class TaskController {
         }
     }
     
-    func loadFromPersistentStore() {
-        
-        do {
-            try fetchedResultsController.performFetch()
-        } catch let error {
-            print("Error loading from persistent store: \(error.localizedDescription)")
-        }
+    func fetchTasks() -> [Task] {
+        let request: NSFetchRequest<Task> = Task.fetchRequest()
+        return (try? CoreDataStack.context.fetch(request)) ?? []
     }
     
     func toggleIsCompleted(task: Task) {
